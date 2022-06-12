@@ -43,3 +43,4 @@ Error: Пришло время смыть за собой! Вы покакали
     at processTimers (internal/timers.js:498:7)
 npm ERR! Test failed.  See above for more details.
 */
+
