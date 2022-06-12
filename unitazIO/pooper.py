@@ -6,18 +6,24 @@ from .pooping_exceptions import TooMuchTimeForPooping
 
 
 class Poop(Unitaz):
+    def __init__(self, poop_times: int, flush_after_pooping: bool = False) -> None:
+        self.poop_times = poop_times
+        self.flush_after_pooping = flush_after_pooping
+    
     @staticmethod
     def spaces() -> str:
         return ' ' * random.randint(5, 30)
 
-    @classmethod
-    def boom(cls, timer: int) -> None:
+    def boom(self, timer: int) -> None:
         if timer not in range(1, 101):
-            raise TooMuchTimeForPooping('You can\'t poop lower than 1 second and more than 100.')
+            raise TooMuchTimeForPooping('Вы не можете какать меньше 1 и дольше 100 секунд.')
 
-        words_dict = ['BOOM!', 'YOU ARE HEADLESS!', 'SO MUCH!']
+        words_dict = ['БУУМ!', 'ТЫ ПРОСТО В УДАРЕ!', '#ТАКМНОГО!']
         
-        while True:
-            cls.iteratively_pooped()
+        for shit in range(self.poop_times):
+            self.iteratively_pooped()
             time.sleep(timer)
-            print(f'{cls.spaces()} {random.choice(words_dict)}')
+            print(f'{self.spaces()} {random.choice(words_dict)}')
+
+        if self.flush_after_pooping:
+            print('\nЯ все смыл, и на всякий случай вызвал сантехника.')
