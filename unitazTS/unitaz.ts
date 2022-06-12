@@ -1,5 +1,5 @@
 export class Unitaz {
-    private poopedTimes: number = 0;
+    protected poopedTimes: number = 0;
 
     protected iterativelyPooped(): any {
         if (this.poopedTimes === 10) {
