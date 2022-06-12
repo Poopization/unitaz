@@ -1,16 +1,16 @@
 import { Unitaz } from './unitaz';
 
 export class Poop extends Unitaz {
-    private poop_times: number;
-    private flush_after_pooping: boolean = false;
+    private poopingTimes: number;
+    private flushAfterPooping: boolean = false;
 
-    constructor(poop_times: number, flush_after_pooping: boolean = false) {
+    constructor(poopingTimes: number, flushAfterPooping?: boolean) {
         super();
 
-        this.poop_times = poop_times;
+        this.poopingTimes = poopingTimes;
         
-        if (flush_after_pooping) {
-            this.flush_after_pooping = true;
+        if (flushAfterPooping) {
+            this.flushAfterPooping = true;
         }
     }
 
@@ -32,7 +32,11 @@ export class Poop extends Unitaz {
         const wordsDict = ['БУУМ!', 'ТЫ ПРОСТО В УДАРЕ!', '#ТАКМНОГО!'];
 
         const wrapper = () => {
-            this.iterativelyPooped()
+            this.iterativelyPooped();
+
+            if (this.poopedTimes === this.poopingTimes) {
+                return;
+            }
 
             const randomIndex = Math.floor(Math.random() * wordsDict.length);
             const word = wordsDict[randomIndex];
@@ -41,7 +45,8 @@ export class Poop extends Unitaz {
         
         setInterval(wrapper, timer * 1000);
         
-        if (this.flush_after_pooping) {
+        // За каким-то хуем это выполняется раньше интервала...
+        if (this.flushAfterPooping) {
             console.log('\nЯ все смыл, и на всякий случай вызвал сантехника.');
         }
     }
