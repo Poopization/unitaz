@@ -19,5 +19,5 @@ class Poop(Unitaz):
         
         while True:
             cls.iteratively_pooped()
-            time.sleep(5)
+            time.sleep(timer)
             print(f'{cls.spaces()} {random.choice(words_dict)}')
