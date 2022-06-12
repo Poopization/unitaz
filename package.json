@@ -1,0 +1,28 @@
+{
+  "name": "unitaz",
+  "version": "1.0.0",
+  "description": "Концептуально новый подход к библиотекам в сфере IT.",
+  "main": "./ts/index.js",
+  "scripts": {
+    "start": "npx tsc && node ./index.js",
+    "test": "npx tsc && node ./tests.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DarkJoij/unitazIO.git"
+  },
+  "keywords": [
+    "unitaz",
+    "ts",
+    "py"
+  ],
+  "author": "Dallas & MagM1go",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DarkJoij/unitazIO/issues"
+  },
+  "homepage": "https://github.com/DarkJoij/unitazIO#readme",
+  "dependencies": {
+    "typescript": "^4.7.3"
+  }
+}
